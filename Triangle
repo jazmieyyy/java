@@ -1,0 +1,29 @@
+/*PROGRAM 4*/
+
+import java.util.Scanner;
+
+public class Triangle{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the length of side A: ");
+        double sideA = scanner.nextDouble();
+
+        System.out.print("Enter the length of side B: ");
+        double sideB = scanner.nextDouble();
+
+        System.out.print("Enter the length of side C: ");
+        double sideC = scanner.nextDouble();
+
+        System.out.println("");
+        if (sideA == sideB && sideB == sideC) {
+            System.out.println("Equilateral Triangle");
+        } else if (sideA == sideB || sideA == sideC || sideB == sideC) {
+            System.out.println("Isosceles Triangle");
+        } else {
+            System.out.println("Scalene Triangle");
+        }
+
+        scanner.close();
+    }
+}
