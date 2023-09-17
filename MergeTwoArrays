@@ -1,0 +1,28 @@
+import java.util.*;
+class MergeTwoArrays{
+public static void main(String args[]){
+Scanner sc=new Scanner(System. in);
+
+System.out.print("enter the size of first array: ");
+int size1=sc.nextInt();
+int firstArray[]=new int[size1];
+System.out.println("enter the elements of first array :");
+for(int i=0;i < size1;i++){
+firstArray[i]=sc.nextInt();
+}
+
+System.out.print("enter the size of second array: ");
+int size2=sc.nextInt();
+int secondArray[]=new int[size2];
+System.out.println("enter the elements of second array: ");
+for(int i=0;i < size2;i++){
+secondArray[i]=sc.nextInt();
+}
+
+int arraySize=size1+size2;
+int mergedArray[]=new int[arraySize];
+System.arraycopy(firstArray ,0,mergedArray,0, size1);
+System.arraycopy(secondArray ,0,mergedArray,size1,size2);
+System.out.println("merged arrays:" + Arrays.toString(mergedArray)) ;
+}
+}
