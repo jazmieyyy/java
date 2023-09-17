@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input range from the user
+        System.out.print("Enter the starting number: ");
+        int start = scanner.nextInt();
+
+        System.out.print("Enter the ending number: ");
+        int end = scanner.nextInt();
+
+        System.out.println("Armstrong numbers in the range " + start + " to " + end + ":");
+        findArmstrongNumbersInRange(start, end);
+
+        scanner.close();
+    }
+
+    // Function to check if a number is an Armstrong number
+    public static boolean isArmstrong(int num) {
+        int originalNum = num;
+        int numDigits = String.valueOf(num).length();
+        int sum = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, numDigits);
+            num /= 10;
+        }
+
+        return sum == originalNum;
+    }
+
+    // Function to find Armstrong numbers in a given range
+    public static void findArmstrongNumbersInRange(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            if (isArmstrong(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+}
