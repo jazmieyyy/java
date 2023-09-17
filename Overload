@@ -1,0 +1,27 @@
+#PROGRAM 17
+
+import java.util.*;
+class OverloadDemo{
+    void volume(int a){
+        System.out.print("Volume of cube is: "+(a*a*a));
+         System.out.println(" ");
+    }
+
+     void volume(int l, int b, int w){
+        System.out.print("Volume of rectangular box is: "+(l*b*w));
+         System.out.println(" ");
+    }
+
+     void volume(int r, int h){
+        System.out.print("Volume of cylinder is: "+(3.14*r*r*h));
+         System.out.println(" ");
+    }
+}
+class Overload{
+    public static void main(String args[]){
+        OverloadDemo vol=new OverloadDemo();
+        vol.volume(10);
+        vol.volume(1,2,3);
+        vol.volume(5,10);
+    }
+}
