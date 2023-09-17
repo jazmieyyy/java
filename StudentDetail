@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class Student{
+ String name;
+ int rollno;
+ String course;
+
+void Display(){
+  System.out.println("Name:  "+name);
+  System.out.println("Rollno:  "+rollno);
+  System.out.println("Course:  "+course);
+}
+}
+
+class Marks extends Student{
+  int m1,m2,m3,m4,m5;
+ 
+void total(){
+  System.out.println("The total mark is: " +(m1+m2+m3+m4+m5));
+}
+ 
+void average(){
+  System.out.println("The average mark is: "+(m1+m2+m3+m4+m5/5));
+}
+}
+
+class StudentDetail{
+  public static void main(String args[]){
+  Student s1=new Student();
+  Marks m=new Marks();
+  Scanner sc=new Scanner(System.in);
+  System.out.print("Enter your name: ");
+  m.name=sc.nextLine();
+  System.out.print("Enter your course: ");
+  m.course=sc.nextLine();
+  System.out.print("Enter your rollno: ");
+  m.rollno=sc.nextInt();
+  System.out.print("Enter m1: ");
+  m.m1=sc.nextInt();
+  System.out.print("Enter m2: ");
+  m.m2=sc.nextInt();
+  System.out.print("Enter m3: ");
+  m.m3=sc.nextInt();
+  System.out.print("Enter m4: ");
+  m.m4=sc.nextInt();
+  System.out.print("Enter m5: ");
+  m.m5=sc.nextInt();
+m.Display();
+m.total();
+m.average();
+}
+}
