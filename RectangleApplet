@@ -1,0 +1,35 @@
+import java.awt.*;
+import java.applet.*;
+
+public class RectangleApplet extends Applet{
+    private int x,y,width,height;
+    private Color rectColor;
+
+public void init(){
+    x=Integer.parseInt(getParameter ("x"));
+    y=Integer.parseInt(getParameter ("y"));
+    width=Integer.parseInt(getParameter ("width"));
+    height=Integer.parseInt(getParameter ("height"));
+    rectColor=Color.decode(getParameter ("Color"));
+}
+
+public void paint(Graphics g){
+    g.setColor(rectColor);
+    g.fillRect(x,y,width,height);
+}
+}
+
+
+#html code Rectangle.html
+
+<html>
+    <body>
+        <applet code="RectangleApplet.class" width="500" height="400">
+            <param name="x" value="50">
+            <param name="y" value="50">
+            <param name="width" value="200">
+            <param name="height" value="100">
+            <param name="Color" value="#FF0000"> <!-- Color in hexadecimal format -->
+        </applet>
+    </body>
+</html>
