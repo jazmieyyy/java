@@ -1,0 +1,44 @@
+//PROGRAM 10
+
+import java.util.Scanner;
+
+public class SumandReverse {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int sumOfDigits = getSumOfDigits(n);
+        int reverse = getReverse(n);
+
+        System.out.println("Sum of digits: " + sumOfDigits);
+        System.out.println("Reverse of the number: " + reverse);
+    }
+
+    public static int getSumOfDigits(int n) {
+        int sum = 0;
+        int temp = n;
+
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum += digit;
+            temp /= 10;
+        }
+
+        return sum;
+    }
+
+    public static int getReverse(int n) {
+        int reverse = 0;
+        int temp = n;
+
+        while (temp != 0) {
+            int digit = temp % 10;
+            reverse = reverse * 10 + digit;
+            temp /= 10;
+        }
+
+        return reverse;
+    }
+}
