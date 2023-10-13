@@ -14,7 +14,7 @@ class TraceandTranspose
        
     System.out.print("Enter the Number of Rows : ");
     r = sc.nextInt();
-    System.out.print("nter the Number of Columns : ");
+    System.out.print("Enter the Number of Columns : ");
     c = sc.nextInt();
     if (r != c) 
     {
