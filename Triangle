@@ -1,29 +1,36 @@
-/*PROGRAM 4*/
+//PROGRAM 4
 
 import java.util.Scanner;
 
-public class Triangle{
+public class Triangle {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the length of side A: ");
-        double sideA = scanner.nextDouble();
+        System.out.println("Enter the lengths of the three sides of the triangle:");
+        double side1 = sc.nextDouble();
+        double side2 = sc.nextDouble();
+        double side3 = sc.nextDouble();
 
-        System.out.print("Enter the length of side B: ");
-        double sideB = scanner.nextDouble();
+        if (isTriangle(side1, side2, side3)) {
+            if (side1 == side2 && side2 == side3) {
+                System.out.println("It is an equilateral triangle.");
+            } else if (side1 == side2 || side2 == side3 || side3 == side1) {
+                System.out.println("It is an isosceles triangle.");
+            } else {
+                System.out.println("It is a scalene triangle.");
+            }
 
-        System.out.print("Enter the length of side C: ");
-        double sideC = scanner.nextDouble();
-
-        System.out.println("");
-        if (sideA == sideB && sideB == sideC) {
-            System.out.println("Equilateral Triangle");
-        } else if (sideA == sideB || sideA == sideC || sideB == sideC) {
-            System.out.println("Isosceles Triangle");
+            double perimeter = side1 + side2 + side3;
+            double s = perimeter / 2;
+            double area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+            System.out.println("Area = " + area);
         } else {
-            System.out.println("Scalene Triangle");
+            System.out.println("These sides cannot form a triangle.");
         }
+    }
 
-        scanner.close();
+    public static boolean isTriangle(double a, double b, double c) {
+        return (a + b > c) && (b + c > a) && (c + a > b);
     }
 }
+
