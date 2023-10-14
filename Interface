@@ -1,0 +1,59 @@
+//PROGRAM 20
+
+import java.util.*;
+
+interface Volume{
+    double pi=3.14;
+    void readData();
+    void displayVolume();
+}
+
+class Sphere implements Volume{
+    double radius;
+    double volume;
+
+    public void readData(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the radius of the sphere: ");
+        radius = sc.nextDouble();
+    }
+
+    public void displayVolume(){
+        volume = (4.0/3.0) * pi * radius * radius * radius;
+        System.out.println("Volume of the sphere is: "+volume);
+    }
+}
+
+class Cylinder implements Volume{
+    double radius;
+    double height;
+    double volume;
+
+    public void readData(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the radius of the cylinder: ");
+        radius = sc.nextDouble();
+        System.out.print("Enter the height of the cylinder: ");
+        height = sc.nextDouble();
+    }
+
+    public void displayVolume(){
+        volume = pi * radius * radius * height;
+        System.out.println("Volume of the sphere is: "+volume);
+    }
+}
+
+public class Interface{
+    public static void main(String args[]){
+        Sphere s = new Sphere();
+        Cylinder c = new Cylinder();
+
+        System.out.println("Calculating volume for a sphere ");
+        s.readData();
+        s.displayVolume();
+
+        System.out.println("\nCalculating volume for a cylinder ");
+        c.readData();
+        c.displayVolume();
+    }
+}
