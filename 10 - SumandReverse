@@ -1,44 +1,35 @@
 //PROGRAM 10
 
 import java.util.Scanner;
-
-public class SumandReverse {
-    public static void main(String args[]) {
+class Operations {
+    int a, m = 0, sum = 0;
+    void sum(int num) {
+        do {
+            a = num % 10;
+            sum = sum + a;
+            num = num / 10;
+          } 
+        while (num > 0);
+        System.out.println("Sum of digits = " + sum);
+    }
+    void reverse(int num) {
+        do {
+            a = num % 10;
+            m = m * 10 + a;
+            num = num / 10;
+         } 
+        while (num > 0);
+        System.out.println("Reverse : " + m);
+    }
+}
+class SumandReverse {
+    public static void main(String[] args) {
+        int n;
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter a number: ");
-        int n = sc.nextInt();
-
-        int sumOfDigits = getSumOfDigits(n);
-        int reverse = getReverse(n);
-
-        System.out.println("Sum of digits: " + sumOfDigits);
-        System.out.println("Reverse of the number: " + reverse);
-    }
-
-    public static int getSumOfDigits(int n) {
-        int sum = 0;
-        int temp = n;
-
-        while (temp != 0) {
-            int digit = temp % 10;
-            sum += digit;
-            temp /= 10;
-        }
-
-        return sum;
-    }
-
-    public static int getReverse(int n) {
-        int reverse = 0;
-        int temp = n;
-
-        while (temp != 0) {
-            int digit = temp % 10;
-            reverse = reverse * 10 + digit;
-            temp /= 10;
-        }
-
-        return reverse;
+        System.out.print("Enter any number : ");
+        n = sc.nextInt();
+        Operations obj = new Operations();
+        obj.sum(n);
+        obj.reverse(n);
     }
 }
