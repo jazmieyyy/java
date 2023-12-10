@@ -1,4 +1,5 @@
-//PROGRAM 8 
+/* PROGRAM 8 
+Java Programming Code to Find HCF LCM of Two Numbers */
 
 import java.util.Scanner;
 
