@@ -1,4 +1,5 @@
-//PROGRAM 12
+/* PROGRAM 12
+Write a Java Program to remove all vowels from a string */
 
 import java.util.*;
 
