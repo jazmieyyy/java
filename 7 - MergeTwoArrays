@@ -1,4 +1,5 @@
-#PROGRAM 7
+/* PROGRAM 7
+Write a program to merge two arrays */
 
 import java.util.*;
 class MergeTwoArrays{
