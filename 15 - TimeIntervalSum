@@ -1,3 +1,8 @@
+/*PROGRAM 15
+Create a class Time with hh, mm, ss as data members. Read the data members using constructors.
+Write a java program to find the sum of two time intervals (Hint: Use object as parameter to 
+function) */
+
 class Time {
     private int hh;
     private int mm;
