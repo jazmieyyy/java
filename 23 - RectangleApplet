@@ -1,4 +1,6 @@
-#PROGRAM 23 
+/* PROGRAM 23 
+Write an applet to display a rectangle with specified coordinate and colour passed as parameter from 
+the HTML file. */
 
 import java.awt.*;
 import java.applet.*;
