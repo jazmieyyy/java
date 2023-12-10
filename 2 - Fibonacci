@@ -1,4 +1,5 @@
-#PROGRAM 2
+/* PROGRAM 2
+Write java program to display Fibonacci series up to a limit. */
 
 import java.util.*;
 class Fibonacci{
