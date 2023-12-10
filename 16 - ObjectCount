@@ -1,0 +1,29 @@
+/* PROGRAM 16
+ Write a program to count and display total number of objects created to a class (Hint: static 
+members).*/
+
+
+class MyClass {
+    private static int count = 0; // Static member to count objects
+
+    public MyClass() {
+        count++; // Increment count each time an object is created
+    }
+
+    public static int getObjectCount() {
+        return count; // Return the total count of objects created
+    }
+}
+
+public class ObjectCount {
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass();
+        MyClass obj2 = new MyClass();
+        MyClass obj3 = new MyClass();
+
+        int totalCount = MyClass.getObjectCount(); // Get total count of objects
+
+        System.out.println("Total number of objects created: " + totalCount);
+    }
+}
+
