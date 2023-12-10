@@ -1,0 +1,80 @@
+/* PROGRAM 18
+ Create a class Employee with EmpID, Name, Designation and Dept. Create a child class Salary with 
+Basic, HRA, DA and Allowance. Write a program to compute and display net salary assuming that PF 
+12% of Basic, HRA is 1250, DA 110% of Basic, Allowance 35% of the Basic salary. Netsalay = basic +
+HRA + DA + allowance – PF. */
+
+import java.util.*;
+class Employee {
+    private int empID;
+    private String name;
+    private String designation;
+    private String department;
+
+    public Employee(int empID, String name, String designation, String department) {
+        this.empID = empID;
+        this.name = name;
+        this.designation = designation;
+        this.department = department;
+    }
+
+    // Getters for Employee details
+    public int getEmpID() {
+        return empID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+}
+
+class Salary extends Employee {
+    private double basic;
+    private double hra;
+    private double da;
+    private double allowance;
+
+    public Salary(int empID, String name, String designation, String department,
+                  double basic, double hra, double da, double allowance) {
+        super(empID, name, designation, department);
+        this.basic = basic;
+        this.hra = hra;
+        this.da = da;
+        this.allowance = allowance;
+    }
+
+    public double calculatePF() {
+        return 0.12 * basic; // Calculating PF (12% of Basic)
+    }
+
+    public double calculateNetSalary() {
+        double pf = calculatePF();
+        return basic + hra + da + allowance - pf; // Calculating net salary
+    }
+}
+
+public class SalaryCalculation {
+    public static void main(String[] args) {
+        // Creating an instance of Salary
+        Salary employeeSalary = new Salary(1001, "John Doe", "Manager", "IT",
+                50000, 1250, 1.1 * 50000, 0.35 * 50000);
+
+        // Displaying Employee details
+        System.out.println("Employee ID: " + employeeSalary.getEmpID());
+        System.out.println("Employee Name: " + employeeSalary.getName());
+        System.out.println("Employee Designation: " + employeeSalary.getDesignation());
+        System.out.println("Employee Department: " + employeeSalary.getDepartment());
+
+        // Calculating and displaying net salary
+        double netSalary = employeeSalary.calculateNetSalary();
+        System.out.println("Net Salary: " + netSalary);
+    }
+}
